@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit} from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignInButton } from "@clerk/nextjs";
+import Provider from "./provider";
 
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body
         className={outfit.className}
       >
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
     </ClerkProvider>

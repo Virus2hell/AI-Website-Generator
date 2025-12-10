@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ImagePlus, ArrowUp, LayoutDashboard, Key, HomeIcon, User } from 'lucide-react'
+import { SignInButton } from '@clerk/nextjs'
 
 const suggestions = [
     {
@@ -45,7 +46,9 @@ function Hero() {
             />
             <div className='flex justify-between items-center'>
                 <Button variant={"ghost"} size={'lg'}><ImagePlus /></Button>
-                <Button ><ArrowUp /></Button>
+                <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
+                    <Button disabled={!userInput}><ArrowUp /></Button>
+                </SignInButton>
             </div>
         </div>
 

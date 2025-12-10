@@ -14,7 +14,7 @@ const MenuOptions = [
     }
 ]
 
-function header() {
+function Header() {
   return (
     <div className='flex items-center justify-between p-4 shadow-md'>
         {/* {logo} */}
@@ -35,4 +35,4 @@ function header() {
   )
 }
 
-export default header
+export default Header

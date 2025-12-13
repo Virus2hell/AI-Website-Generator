@@ -26,20 +26,9 @@ export async function GET(req: NextRequest) {
     // @ts-ignore
     .where(eq(chatTable.frameId, frameId));
 
-  // 🔑 Normalize chat messages
-  let chatMessages: any[] = [];
-
-  if (chatResult.length > 0 && chatResult[0]?.chatMessage) {
-    if (Array.isArray(chatResult[0].chatMessage)) {
-      chatMessages = chatResult[0].chatMessage;
-    } else {
-      chatMessages = [chatResult[0].chatMessage];
-    }
-  }
-
   const finalResult = {
     ...frameResult[0],
-    chatMessages,
+    chatMessages: chatResult[0].chatMessage,
   };
 
   return NextResponse.json(finalResult);

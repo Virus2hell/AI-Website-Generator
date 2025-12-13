@@ -26,7 +26,7 @@ export const frameTable = pgTable('frames', {
 
 export const chatTable = pgTable('chats', {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
-    chatMessage: json().$type<{ role: string; content: string }[]>(),
+    chatMessage: json(),
     frameId: varchar().references(() => frameTable.frameId),
     createdBy: varchar().references(() => usersTable.email),
     createdOn: timestamp().defaultNow()

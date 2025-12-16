@@ -22,7 +22,7 @@ function ChatSection({ messages }: Props) {
               <div
                 className={`p-2 rounded-lg max-w-[80%] ${
                   msg.role === "user"
-                    ? "bg-white text-black"
+                    ? "bg-gray text-black"
                     : "bg-gray-300 text-black"
                 }`}
               >
